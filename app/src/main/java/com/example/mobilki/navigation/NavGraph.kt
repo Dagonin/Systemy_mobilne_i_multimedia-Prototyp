@@ -2,6 +2,7 @@ package com.example.mobilki.navigation
 
 import WelcomeScreen
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,9 +14,7 @@ import com.example.mobilki.ui.screens.DetailsScreen
 import com.example.mobilki.ui.screens.ProductsScreen
 
 @Composable
-fun AppNavigation() {
-    val navController = rememberNavController()
-
+fun AppNavigation(navController: NavHostController = rememberNavController()) {
     NavHost(navController, startDestination = "WelcomeScreen") {
         composable("WelcomeScreen") {
             WelcomeScreen(
@@ -25,12 +24,12 @@ fun AppNavigation() {
             )
         }
 
-
         composable("categories") {
             CategoriesScreen(
                 onCategorySelected = { category ->
                     navController.navigate("products/$category")
-                }
+                },
+                onBackClicked = { navController.popBackStack() }
             )
         }
 
@@ -53,7 +52,10 @@ fun AppNavigation() {
             arguments = listOf(navArgument("productId") { type = NavType.IntType })
         ) { backStackEntry ->
             val productId = backStackEntry.arguments?.getInt("productId") ?: 0
-            DetailsScreen(productId = productId, onBackClick = { navController.popBackStack() })
+            DetailsScreen(
+                productId = productId,
+                onBackClick = { navController.popBackStack() }
+            )
         }
     }
 }

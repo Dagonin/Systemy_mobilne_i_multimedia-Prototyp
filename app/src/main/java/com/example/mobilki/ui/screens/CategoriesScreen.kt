@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -26,7 +27,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun CategoriesScreen(
     onCategorySelected: (String) -> Unit,
-    onBackClick: () -> Unit = {}
+    onBackClicked: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -38,7 +39,7 @@ fun CategoriesScreen(
             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
             contentDescription = "Wróć",
             modifier = Modifier
-                .clickable { onBackClick() }
+                .clickable { onBackClicked() }
                 .padding(end = 8.dp)
         )
 
@@ -65,8 +66,8 @@ fun CategoriesScreen(
             // Category buttons with proper navigation
             val categories = listOf(
                 "Owoce" to Color(0xFFF2D16B),
-                "Warzywa liściaste" to Color(0xFF9DA57A),
-                "Warzywa korzeniowe" to Color(0xFFD08B6B)
+                "Warzywa" to Color(0xFF9DA57A),
+                "Zboża" to Color(0xFFD08B6B)
             )
 
             categories.forEach { (category, color) ->
@@ -99,6 +100,7 @@ fun CategoryButton(
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.padding(horizontal = 16.dp)
+                .testTag("categoriesScreen")
         ) {
             Text(
                 text = text.replace(" ", "\n"),

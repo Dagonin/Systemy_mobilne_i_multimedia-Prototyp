@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation("androidx.media3:media3-ui:1.6.1")
     implementation("androidx.media3:media3-exoplayer:1.6.1")
+    implementation(libs.androidx.navigation.testing.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

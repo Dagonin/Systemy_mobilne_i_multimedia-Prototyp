@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
@@ -116,6 +118,7 @@ enum class DetailsTab(val title: String) {
 
 @Composable
 fun DescriptionTab(product: Product, weight: Modifier) {
+    val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -135,11 +138,12 @@ fun DescriptionTab(product: Product, weight: Modifier) {
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = product.description,
             style = MaterialTheme.typography.bodyMedium,
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
+            modifier = Modifier.verticalScroll(scrollState)
         )
     }
 }
