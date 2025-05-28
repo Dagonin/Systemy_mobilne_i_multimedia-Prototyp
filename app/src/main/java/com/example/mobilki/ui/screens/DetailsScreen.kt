@@ -18,6 +18,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -28,9 +30,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,6 +48,8 @@ import androidx.compose.ui.unit.dp
 import com.example.mobilki.data.model.Product
 import com.example.mobilki.data.repository.ProductsRepository
 import com.example.mobilki.ui.VideoPlayer
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 sealed class MediaItemData {
     data class Image(val resId: Int) : MediaItemData()
@@ -54,6 +60,14 @@ sealed class MediaItemData {
 fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
     val product = remember { ProductsRepository.getProductById(productId) }
     var selectedTab by remember { mutableStateOf(DetailsTab.Description) }
+    val coroutineScope = rememberCoroutineScope()
+    val pagerState = rememberPagerState {
+        DetailsTab.entries.size
+    }
+
+    LaunchedEffect(pagerState.currentPage) {
+        selectedTab = DetailsTab.entries[pagerState.currentPage]
+    }
 
     Scaffold(
         bottomBar = {
@@ -67,7 +81,11 @@ fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
                     Box(
                         modifier = Modifier
                             .weight(1f)
-                            .clickable { selectedTab = tab }
+                            .clickable { selectedTab = tab
+                                coroutineScope.launch {
+                                    pagerState.animateScrollToPage(page = DetailsTab.entries.indexOf(tab))
+                                }
+                            }
                             .background(if (tab == selectedTab) Color.Red else Color(0xFFB87C7C)),
                         contentAlignment = Alignment.Center
                     ) {
@@ -102,15 +120,17 @@ fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
                 )
             }
 
-            // Content
-            when (selectedTab) {
-                DetailsTab.Description -> DescriptionTab(product, Modifier.weight(1f))
-                DetailsTab.Gallery -> GalleryTab(product, Modifier.weight(1f))
+            HorizontalPager(
+                state = pagerState
+            ) { page ->
+                when (DetailsTab.entries[page]) {
+                    DetailsTab.Description -> DescriptionTab(product, Modifier.weight(1f))
+                    DetailsTab.Gallery -> GalleryTab(product, Modifier.weight(1f))
+                }
             }
         }
     }
 }
-
 enum class DetailsTab(val title: String) {
     Description("Opis"),
     Gallery("Galeria")
