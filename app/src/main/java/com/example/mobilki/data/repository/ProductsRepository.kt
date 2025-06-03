@@ -15,6 +15,7 @@ object ProductsRepository {
             gallery = listOf(
                 R.drawable.apple1,
                 R.drawable.apple2,
+                R.raw.apple_vid1
             )
 
         ),
@@ -55,7 +56,7 @@ object ProductsRepository {
             id = 5,
             name = "Cebula",
             category = "Warzywa",
-            description = "cebula opis",
+            description = "Cebula (Allium cepa L.) – zwyczajowa nazwa warzywa należącego do rodziny amarylkowatych. Prawidłowa nazwa botaniczna to czosnek cebula, jest to bowiem gatunek należący do rodzaju czosnek. W użyciu jest jednak głównie nazwa cebula. Inne używane nazwy to: cebula ogrodowa, cebula zwyczajna, dymka[a], skulibaba.",
             imageRes = R.drawable.onion1,
             gallery = listOf(
                 R.drawable.onion1,
@@ -99,7 +100,7 @@ object ProductsRepository {
             id = 9,
             name = "Bazylia",
             category = "Zioła",
-            description = "Bazylia opis",
+            description = "Bazylia (Ocimum L.) – rodzaj roślin z rodziny jasnotowatych. Należy do niego 65 gatunków. Zasięg rodzaju obejmuje wszystkie kontynenty w strefie międzyzwrotnikowej, przy czym centrum zróżnicowania gatunkowego stanowi Afryka. Szeroko rozprzestrzeniona jako gatunek uprawiany i introdukowany, także w strefie umiarkowanej jest bazylia pospolita O. basilicum, uprawiana także w Polsce. Wiele gatunków z tego rodzaju uprawianych jest jako aromatyczne zioła, zawierające olejki eteryczne (zob. olejek bazyliowy), używane są jako przyprawy do pożywienia, do wciągania nosem, do odstraszania owadów i jako rośliny lecznicze. Popularną rośliną przyprawową, zwłaszcza w basenie Morza Śródziemnego jest bazylia pospolita O. basilicum, wykorzystywana np. do przyprawiania zapiekanek, sosów, pizzy i likierów. Bazylia amerykańska O. americanum o aromacie przypominającym limonkowy, jest przyprawą dodawaną gł. do owoców morza. Uprawiane jako olejkodajne są także bazylia eugenolowa O. gratissimum i O. × africanum. O. obovatum bywa uprawiana jako ozdobna, ale też jest bioindykatorem miedzi.",
             imageRes = R.drawable.bazylia1,
             gallery = listOf(
                 R.drawable.bazylia1,
@@ -110,7 +111,7 @@ object ProductsRepository {
             id = 10,
             name = "Kolendra",
             category = "Zioła",
-            description = "Kolendra opis",
+            description = "Kolendra (Coriandrum L.) – rodzaj roślin z rodziny selerowatych. Obejmuje w zależności od ujęcia dwa lub trzy gatunki. Występują one w południowo-zachodniej Azji, gdzie rosną w suchych, trawiastych murawach. W stanie świeżym mają nieprzyjemny zapach określany jako przypominający woń wydzielaną przez pluskwy. Kolendra siewna będąca rośliną przyprawową, jest rośliną użytkową znaną od starożytności. Została szeroko rozpowszechniona na świecie w uprawie i na wszystkich kontynentach strefach umiarkowanych i strefie międzyzwrotnikowej stwierdzona została jako gatunek dziczejący. Największymi producentami są Maroko i Indie.",
             imageRes = R.drawable.kolendra1,
             gallery = listOf(
                 R.drawable.kolendra1,
@@ -121,7 +122,7 @@ object ProductsRepository {
             id = 11,
             name = "Mięta",
             category = "Zioła",
-            description = "Mięta opis",
+            description = "Mięta (Mentha L.) – rodzaj roślin z rodziny jasnotowatych (Lamiaceae). W zależności od ujęcia taksonomicznego (stopnia uwzględnienia taksonów mieszańcowych, częstych w tym rodzaju) należy tu od ok. 18–19 do 24 gatunków. Zasięg rodzaju obejmuje wszystkie kontynenty z wyjątkiem Antarktydy i Ameryki Południowej (aczkolwiek na tej drugiej obecne są jako introdukowane). Rośliny te rosną na różnych siedliskach, najczęściej wilgotnych lub mokrych, ale też na suchych stepach. Mięty używane są jako zioła o specyficznym, miętowym aromacie, w kuchni, ale także w ziołolecznictwie. W Ameryce stosowany był tamtejszy gatunek – M. canadensis. W Starożytnym Rzymie głównie mięta nadwodna M. aquatica. Współcześnie największe znaczenie użytkowe mają: mięta zielona M. spicata, mięta wonna M. suaveolens, mięta pieprzowa M. × piperita, mięta długolistna M. longifolia, mięta polej M. pulegium. Jako roślina ozdobna na skalniakach uprawiana bywa mięta Requiena M. requienii.",
             imageRes = R.drawable.mint1,
             gallery = listOf(
                 R.drawable.mint1,
@@ -132,7 +133,7 @@ object ProductsRepository {
             id = 12,
             name = "Rozmaryn",
             category = "Zioła",
-            description = "Rozmaryn opis",
+            description = "Rozmaryn (Rosmarinus L., właśc. Salvia subg. Rosmarinus (L.) J.B.Walker, B.T.Drew & J.G.González) – tradycyjnie wyróżniany rodzaj roślin z rodziny jasnotowatych, współcześnie podrodzaj w obrębie rodzaju szałwia Salvia. Obejmuje trzy gatunki i dwa mieszańce spotykane także w naturze występujące w południowej Europie i obszarze śródziemnomorskim. Rozmaryn lekarski jest popularną i od dawna uprawianą rośliną przyprawową, używaną także do wyrobu olejku rozmarynowego (surowiec m.in. do wyrobu wody kolońskiej), wykorzystywaną leczniczo, cenioną jako roślina miododajna, dawniej wykorzystywaną też na opał, dla poprawy pamięci, do ozdoby podczas pogrzebów i ślubów.",
             imageRes = R.drawable.rozmaryn1,
             gallery = listOf(
                 R.drawable.rozmaryn1,

@@ -36,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mobilki.data.repository.ProductsRepository
+import com.example.mobilki.ui.components.SpinningArrowBackIcon
 
 @Composable
 fun ProductsScreen(
@@ -55,13 +56,7 @@ fun ProductsScreen(
             .background(Color(0xFF7CF5AD)) // Różowe tło
             .padding(16.dp)
     ) {
-        Icon(
-            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-            contentDescription = "Wróć",
-            modifier = Modifier
-                .clickable { onBackClick() }
-                .padding(end = 8.dp)
-        )
+        SpinningArrowBackIcon(onClick = onBackClick)
         Spacer(modifier = Modifier.height(16.dp))
         Row(
             verticalAlignment = Alignment.CenterVertically,

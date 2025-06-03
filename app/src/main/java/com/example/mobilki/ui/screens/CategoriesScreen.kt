@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.mobilki.ui.components.SpinningArrowBackIcon
 
 @Composable
 fun CategoriesScreen(
@@ -35,14 +36,7 @@ fun CategoriesScreen(
             .background(Color(0xFF7CF5AD)) // Różowe tło
             .padding(16.dp),
     ) {
-        Icon(
-            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-            contentDescription = "Wróć",
-            modifier = Modifier
-                .clickable { onBackClicked() }
-                .padding(end = 8.dp)
-        )
-
+        SpinningArrowBackIcon(onClick = onBackClicked)
         Spacer(modifier = Modifier.height(16.dp))
 
         // Title text

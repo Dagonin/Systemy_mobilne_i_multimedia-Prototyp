@@ -48,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import com.example.mobilki.data.model.Product
 import com.example.mobilki.data.repository.ProductsRepository
 import com.example.mobilki.ui.VideoPlayer
+import com.example.mobilki.ui.components.SpinningArrowBackIcon
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
@@ -57,7 +58,7 @@ sealed class MediaItemData {
 }
 
 @Composable
-fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
+fun DetailsScreen(productId: Int, onBackClick: () -> Unit) {
     val product = remember { ProductsRepository.getProductById(productId) }
     var selectedTab by remember { mutableStateOf(DetailsTab.Description) }
     val coroutineScope = rememberCoroutineScope()
@@ -111,9 +112,7 @@ fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
                     .fillMaxWidth()
                     .padding(8.dp)
             ) {
-                IconButton(onClick = { onBackClick() }) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                }
+                SpinningArrowBackIcon(onClick = onBackClick)
                 Text(
                     text = if (selectedTab == DetailsTab.Description) "Opis" else "Galeria",
                     style = MaterialTheme.typography.titleLarge
