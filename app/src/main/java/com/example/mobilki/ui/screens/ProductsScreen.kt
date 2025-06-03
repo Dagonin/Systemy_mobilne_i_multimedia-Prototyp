@@ -52,7 +52,7 @@ fun ProductsScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFEBA3A3)) // Różowe tło
+            .background(Color(0xFF7CF5AD)) // Różowe tło
             .padding(16.dp)
     ) {
         Icon(

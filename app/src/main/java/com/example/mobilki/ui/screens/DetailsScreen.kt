@@ -75,7 +75,7 @@ fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(64.dp)
-                    .background(Color(0xFFB87C7C)),
+                    .background(Color(0xFF69D093)),
             ) {
                 DetailsTab.entries.forEach { tab ->
                     Box(
@@ -86,19 +86,19 @@ fun DetailsScreen(productId: Int, onBackClick: () -> Boolean) {
                                     pagerState.animateScrollToPage(page = DetailsTab.entries.indexOf(tab))
                                 }
                             }
-                            .background(if (tab == selectedTab) Color.Red else Color(0xFFB87C7C)),
+                            .background(if (tab == selectedTab) Color(0xFFD6FDA1) else Color(0xFF69D093)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
                             text = tab.title,
-                            color = Color.White,
+                            color = Color.Black,
                             modifier = Modifier.padding(8.dp)
                         )
                     }
                 }
             }
         },
-        containerColor = Color(0xFFFFC0CB)
+        containerColor = Color(0xFF7CF5AD)
     ) { padding ->
         Column(
             modifier = Modifier

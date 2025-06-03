@@ -32,7 +32,7 @@ fun CategoriesScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFEBA3A3)) // Różowe tło
+            .background(Color(0xFF7CF5AD)) // Różowe tło
             .padding(16.dp),
     ) {
         Icon(
@@ -65,9 +65,9 @@ fun CategoriesScreen(
             Spacer(modifier = Modifier.height(88.dp))
             // Category buttons with proper navigation
             val categories = listOf(
-                "Owoce" to Color(0xFFF2D16B),
-                "Warzywa" to Color(0xFF9DA57A),
-                "Zboża" to Color(0xFFD08B6B)
+                "Owoce" to Color(0xFFC1FBA4),
+                "Warzywa" to Color(0xFFD9FDA1),
+                "Zioła" to Color(0xFFF0FF9E)
             )
 
             categories.forEach { (category, color) ->

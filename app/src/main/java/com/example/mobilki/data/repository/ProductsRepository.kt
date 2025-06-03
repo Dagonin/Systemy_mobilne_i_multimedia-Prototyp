@@ -76,7 +76,7 @@ object ProductsRepository {
         Product(
             id = 9,
             name = "Pszenica",
-            category = "Zboża",
+            category = "Zioła",
             description = "Pszenica zwyczajna (Triticum aestivum L.) – gatunek pszenicy z rodziny wiechlinowatych. Jest kosmopolityczną rośliną uprawną, której największe uprawy znajdują się w Europie, wschodniej Azji oraz Indiach, obu Amerykach, a także Australii.",
             imageRes = R.drawable.apple1,
             gallery = listOf(R.drawable.apple1, R.raw.sample_video,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,)
@@ -85,7 +85,7 @@ object ProductsRepository {
         Product(
             id = 10,
             name = "Żyto",
-            category = "Zboża",
+            category = "Zioła",
             description = "Żyto (Secale L.) – rodzaj roślin jednorocznych, rzadziej dwuletnich z rodziny wiechlinowatych. Liczy 9 gatunków. Rośliny te występują w południowej i południowo-wschodniej Europie, w północnej Afryce oraz zachodniej Azji, na wschodzie sięgając po zachodnie Himalaje i region Sinciang w zachodnich Chinach. Jeden gatunek (S. africanum) rośnie w Południowej Afryce. Ze względów gospodarczych najważniejsze znaczenie ma żyto zwyczajne S. cereale.",
             imageRes = R.drawable.apple1,
             gallery = listOf(R.drawable.apple1, R.raw.sample_video,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,)
@@ -94,7 +94,7 @@ object ProductsRepository {
         Product(
             id = 11,
             name = "Owies",
-            category = "Zboża",
+            category = "Zioła",
             description = "Owies (Avena L.) – rodzaj roślin z rodziny wiechlinowatych. Obejmuje 25 gatunków. Rośliny te występują w Europie, Azji i północnej oraz wschodniej Afryce. Kilka gatunków jest uprawianych, głównie owies zwyczajny A. sativa, do najbardziej uciążliwych chwastów należy owies głuchy A. fatua.",
             imageRes = R.drawable.apple1,
             gallery = listOf(R.drawable.apple1, R.raw.sample_video,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,)
@@ -103,7 +103,7 @@ object ProductsRepository {
         Product(
             id = 12,
             name = "Ryż",
-            category = "Zboża",
+            category = "Zioła",
             description = "Ryż (Oryza L.) – rodzaj zbóż z rodziny wiechlinowatych obejmujący 25 gatunków. Występuje w strefie klimatów gorących i ciepłych na całym świecie. Ryż spożywczy, będący podstawą wyżywienia 1/3 ludności świata, jest produktem otrzymywanym z ziarna ryżu siewnego.",
             imageRes = R.drawable.apple1,
             gallery = listOf(R.drawable.apple1, R.raw.sample_video,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,R.drawable.apple1,)
